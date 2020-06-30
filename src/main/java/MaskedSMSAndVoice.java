@@ -98,7 +98,7 @@ public class MaskedSMSAndVoice {
                         String driverName = driver.getString(2);
 
                         // Find a number that has not been used by the driver or the customer
-                        String query = String.format("SELECT * FROM proxy_numbers \n"
+                        String query = String.format("SELECT * FROM proxy_numbers \n" +
                                 "WHERE id NOT IN (SELECT number_id FROM rides WHERE customer_id = %s) \n" +
                                         "AND id NOT IN (SELECT number_id FROM rides WHERE driver_id = %s)",
                                 customerID,
